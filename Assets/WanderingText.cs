@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class WanderingText : MonoBehaviour
 {
-    private RectTransform ract;
+    private Transform pos;
 
     // Start is called before the first frame update
     void Start()
     {
-        ract = GetComponent<RectTransform>();
+        pos = GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ract.position = Vector2.Lerp(new Vector2(ract.position.x, ract.position.y), new Vector2(ract.position.x-Random.Range(0,0.2f), ract.position.y - Random.Range(0, 0.2f)), Time.deltaTime/5f); 
+        pos.position = Vector2.Lerp(new Vector2(pos.position.x, pos.position.y), new Vector2(pos.position.x-Random.Range(-30f,30f), pos.position.y - Random.Range(-30f, 30f)), Time.deltaTime/1); 
     }
 }
